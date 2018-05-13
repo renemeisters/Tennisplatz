@@ -24,7 +24,7 @@ namespace M120Projekt
         public MainWindow()
         {
             InitializeComponent();
-            //DemoErstellen();
+            DemoErstellen();
             DemoAbfragen();
         }
         #region Demo

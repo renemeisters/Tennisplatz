@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace M120Projekt.BLL
 {
-    class ClassB
+    static class ClassB
     {
         public static List<DAL.ClassB> LesenAlle()
         {
