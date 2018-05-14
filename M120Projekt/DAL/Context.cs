@@ -16,10 +16,10 @@ namespace M120Projekt.DAL
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ClassA>().ToTable("ClassA"); // Damit kein "s" angehängt wird an Tabelle
-            modelBuilder.Entity<ClassB>().ToTable("ClassB"); // Damit kein "s" angehängt wird an Tabelle
+            modelBuilder.Entity<Reservation>().ToTable("Reservationen"); // Damit kein "s" angehängt wird an Tabelle
+            modelBuilder.Entity<Platz>().ToTable("Plaetze"); // Damit kein "s" angehängt wird an Tabelle
         }
-        public DbSet<ClassA> ClassA { get; set; }
-        public DbSet<ClassB> ClassB { get; set; }
+        public DbSet<Reservation> Reservation { get; set; }
+        public DbSet<Platz> Platz { get; set; }
     }
 }
