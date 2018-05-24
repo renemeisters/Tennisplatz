@@ -40,7 +40,7 @@ namespace M120Projekt.BLL
         {
             using (var context = new DAL.Context())
             {
-                return (from record in context.Reservation.Include("Platz") where record.Platz == suchschluessel select record).ToList();
+                return (from record in context.Reservation.Include("Platz") where record.Platz.PlatzId == suchschluessel.PlatzId select record).ToList();
             }
         }
         public static Int64 Erstellen(DAL.Reservation reservation)
