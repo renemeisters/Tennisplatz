@@ -21,14 +21,15 @@ namespace M120Projekt
     /// </summary>
     public partial class MainWindow : Window
     {
+        public String menu;
         public MainWindow()
         {
             InitializeComponent();
-            DemoErstellen();
-            DemoAbfragen();
+         // DemoErstellen();
+          // DemoAbfragen();
         }
-        #region Demo
-        private void DemoErstellen()
+       #region Demo
+       private void DemoErstellen()
         {
             // Platz (kurze Syntax)
             DAL.Platz platz1 = new DAL.Platz{ Name = "Platz 1 Halle", IstGedeckt = true};
@@ -67,5 +68,45 @@ namespace M120Projekt
             Debug.Print(output);
         }
         #endregion
+    
+        private void reservation_Click(object sender, RoutedEventArgs e)
+        {
+            if (menu != "resevation")
+            {
+                menu = "reservation";
+                Reservieren reservieren = new Reservieren(0,inhalt);
+                reservieren.HorizontalAlignment = HorizontalAlignment.Left;
+                reservieren.VerticalAlignment = VerticalAlignment.Top;
+                inhalt.Content = null;
+                inhalt.Content = reservieren;
+            }
+        }
+
+        private void anzeige_Click(object sender, RoutedEventArgs e)
+        {
+            if (menu != "anzeige")
+            {
+                menu = "anzeige";
+                Anzeigen anzeige = new Anzeigen(0,null,inhalt);
+                anzeige.HorizontalAlignment = HorizontalAlignment.Left;
+                anzeige.VerticalAlignment = VerticalAlignment.Top;
+                inhalt.Content = null;
+                inhalt.Content = anzeige;
+            }
+        }
+
+        private void plaetze_Click(object sender, RoutedEventArgs e)
+        {
+            if (menu != "platz")
+            {
+                menu = "platz";
+                Platz plaetze = new Platz(inhalt);
+                plaetze.HorizontalAlignment = HorizontalAlignment.Left;
+                plaetze.VerticalAlignment = VerticalAlignment.Top;
+                inhalt.Content = null;
+                inhalt.Content = plaetze;
+
+            }
+        }
     }
 }

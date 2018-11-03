@@ -70,6 +70,7 @@ namespace M120Projekt.BLL
         {
             using (var context = new DAL.Context())
             {
+                context.Reservation.Attach(reservation);
                 context.Reservation.Remove(reservation);
                 context.SaveChanges();
             }

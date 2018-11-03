@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M120Projekt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="700"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="DarkGray">
+            <Button  x:Name="reservation"  Content="Reservieren" Margin="5" Click="reservation_Click"></Button>
+            <Button  x:Name="anzeige"  Content="Anzeige" Margin="5" Click="anzeige_Click"></Button>
+            <Button  x:Name="plaetze"  Content="Plätze" Margin="5" Click="plaetze_Click"></Button>
+        </StackPanel>
+        <ScrollViewer x:Name="inhalt" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        </ScrollViewer>
     </Grid>
 </Window>

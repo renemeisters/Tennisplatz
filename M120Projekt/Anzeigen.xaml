@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="M120Projekt.Anzeigen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:M120Projekt"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid x:Name="Reservationen" ItemsSource="{Binding}" VerticalAlignment="Top" HorizontalAlignment="Left" IsReadOnly="True" Width="860" Height="300" CanUserAddRows="False" CanUserSortColumns="True" SelectionMode="Single"  AutoGenerateColumns="False" MouseDoubleClick="Reservationen_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Spielername}" Header="Spielername" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Platz.Name}" Header="Platz" Width="150"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Startzeit}" Header="Startzeit" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Endzeit}" Header="Endzeit" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Preis}" Header="Preis" Width="100"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
